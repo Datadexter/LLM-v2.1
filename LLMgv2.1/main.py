@@ -1,17 +1,15 @@
-#Author - MrSentinel
-
 import streamlit as st
-import google.generativeai as palm
+import google.generativeai as allm
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-API_KEY=os.environ.get("PALM_API_KEY")
-palm.configure(api_key=API_KEY)
+API_KEY=os.environ.get("API_KEY")
+allm.configure(api_key=API_KEY)
 
 def main():
-    st.header("Chat with PaLM")
+    st.header("Chat with A-LLM")
     st.write("")
 
     prompt = st.text_input("Prompt please...", placeholder="Prompt", label_visibility="visible")
@@ -20,7 +18,7 @@ def main():
     if st.button("SEND", use_container_width=True):
         model = "models/text-bison-001"    #This is the only model currently available
 
-        response = palm.generate_text(
+        response = allm.generate_text(
             model=model,
             prompt=prompt,
             temperature=temp,
