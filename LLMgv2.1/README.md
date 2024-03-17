@@ -20,3 +20,4 @@ Welcome to the AI Chat Bot read me page
  streamlit run Palm.py
 ```
 \
+Before running the api create a .env file with your own google API
